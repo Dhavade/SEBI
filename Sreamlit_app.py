@@ -24,7 +24,7 @@ def main():
         month = current_date.strftime("%B")  # Get the full month name
         financial_year = f"{current_date.year}-{current_date.year + 1}"
 
-        path = "D:\\SEBI_DATA\\sebi_data.xlsx"
+        path = "sebi_data.xlsx"
         wb_obj = xw.Book(path)
         wks = wb_obj.sheets.active
 
@@ -155,7 +155,7 @@ def main():
         # wks.range('K41').value=
 
         # Save the workbook after applying formulas
-        wb_obj.save(f"D:\\SEBI_DATA\\sebi_data2.xlsx")
+        wb_obj.save(f"sebi_data2.xlsx")
         # Close the workbook
         wb_obj.close()
 
@@ -165,7 +165,7 @@ def main():
         # Provide a download button for the modified Excel file
         st.download_button(
             label="Download Modified Excel File",
-            data=open("D:\\SEBI_DATA\\sebi_data2.xlsx", "rb").read(),
+            data=open("sebi_data2.xlsx", "rb").read(),
             file_name="sebi_data2.xlsx",
             key="download_button",
         )
